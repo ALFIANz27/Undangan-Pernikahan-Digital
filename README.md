@@ -1,1 +1,260 @@
 # Undangan-Pernikahan-Digital
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Digital - Syafrudin & Sri</title>
+  <style>
+    :root {
+      --main-color: #6e6e6e;
+      --bg-color: #f5f5f5;
+      --text-color: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      text-align: center;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(rgba(110,110,110,0.6), rgba(110,110,110,0.6)),
+                  url('https://png.pngtree.com/thumb_back/fw800/background/20240704/pngtree-nikah-decor-image_15981573.jpg') center/cover;
+      color: rgb(193, 193, 193);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 4.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+      color: #d8d7d5;
+    }
+
+    header h2 {
+      font-size: 4.7rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    header p {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #ffffff;
+    }
+
+
+    #countdown {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .time-box {
+      background: rgba(7, 38, 141, 0.751);
+      padding: 10px 15px;
+      border-radius: 8px;
+      backdrop-filter: blur(6px);
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* 🌸 Tombol modern */
+    button {
+      margin-top: 40px;
+      padding: 14px 40px;
+      background: linear-gradient(135deg, #d1cbcb, #e1e1e1);
+      color: var(--main-color);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(255,255,255,0.3);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(6, 38, 216, 0.849);
+      transition: all 0.5s ease;
+    }
+
+    button:hover::before {
+      left: 100%;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255,255,255,0.4);
+      background: linear-gradient(135deg, #ffffff, #c0c0c0);
+    }
+
+    section {
+      padding: 50px 20px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      color: var(--main-color);
+      margin-bottom: 20px;
+    }
+
+    .videos {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+
+      /* ✅ Ukuran video dibuat lebih kecil dan rapi */
+    video {
+      width: 70%;
+      max-width: 480px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    iframe {
+      width: 90%;
+      max-width: 600px;
+      height: 340px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* 📱 Responsif untuk HP */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header h2 {
+    font-size: 2.3rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .time-box {
+    padding: 8px 10px;
+  }
+
+  .time-box span {
+    font-size: 1.2rem;
+  }
+}
+  </style>
+</head>
+<body>
+  <header id="hero">
+    <h1>Undangan Pernikahan</h1>
+    <h2>Syafrudin & Sri Hadiningsih S.pd</h2>
+    <p>Acara akan diadakan dalam:</p>
+    <div id="countdown">
+      <div class="time-box"><span id="days">--</span>Hari</div>
+      <div class="time-box"><span id="hours">--</span>Jam</div>
+      <div class="time-box"><span id="minutes">--</span>Menit</div>
+      <div class="time-box"><span id="seconds">--</span>Detik</div>
+    </div>
+
+    <button id="lihatUndangan">💌 Lihat Undangan</button>
+  </header>
+
+  <section id="content">
+    <h3>Isi Undangan</h3>
+    <div class="videos">
+      <!-- Ganti path sesuai folder kamu -->
+      <video src="F:/Undangan Pernikahan/Video 1.mp4" autoplay muted loop playsinline controls></video>
+      <video src="F:/Undangan Pernikahan/Video 2.mp4" autoplay muted loop playsinline controls></video>
+      <video src="F:/Undangan Pernikahan/Video 3.mp4" autoplay muted loop playsinline controls></video>
+    </div>
+  </section>
+  
+  <footer>
+    <p>© 2025 Syafrudin & Sri Hadiningsih — Terima kasih atas doa dan kehadiran Anda.</p>
+  </footer>
+
+  <script>
+    const eventDate = new Date('2025-10-20T15:30:00+08:00').getTime();
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = '<strong>Hari Bahagia Telah Tiba!</strong>';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      daysEl.textContent = days;
+      hoursEl.textContent = hours;
+      minutesEl.textContent = minutes;
+      secondsEl.textContent = seconds;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    const btn = document.getElementById('lihatUndangan');
+    const hero = document.getElementById('hero');
+    const content = document.getElementById('content');
+
+    btn.addEventListener('click', () => {
+      hero.style.display = 'none';
+      content.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
